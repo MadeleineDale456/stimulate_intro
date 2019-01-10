@@ -1,0 +1,185 @@
+\documentclass[11pt,t,xcolor=dvipsnames,aspectratio=169]{beamer}
+
+\usetheme{Custom}
+
+\usepackage{sansmathfonts}
+
+%\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathtools}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations,decorations.markings}
+\usetikzlibrary{decorations.shapes}
+\usepackage{import} % inputs with relative path
+\let\pgfimageWithoutPath\pgfimage 
+\renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[#1]{gfx/#2}}
+
+
+\title[Fellow project presentation]{Hybrid quantum-classical simulations of lattice gauge theories}
+\author{Giovanni Iannelli}
+%\supervisor{}
+\institute{Humboldt University of Berlin}
+\date{15 January 2019}
+
+\newlength\leftsidebar
+\makeatletter
+\setlength\leftsidebar{\beamer@leftsidebar}
+\makeatother
+
+\begin{document}
+
+\hoffset=-0.5\leftsidebar
+{
+    %\usebackgroundtemplate{
+    %    \put(200,-200){%
+    %    \tikz\node[opacity=0.2] {\pgfuseimage{humboldt}};
+    %    }
+
+    %    \put(30,-220){%
+    %    \tikz\node[opacity=0.2] {\pgfuseimage{cyprus}};
+    %    }
+
+    %    \put(350,-230){%
+    %    \tikz\node[opacity=0.2] {\pgfuseimage{torvergata}};
+    %    }
+    %}
+\begin{frame}[plain,t]
+\titlepage
+\end{frame}
+}
+\hoffset=0in % restore left margin
+
+%\section*{}
+%\begin{frame}[c]
+%  \frametitle{Sommario}
+%  \tableofcontents[hidesubsections]
+%\end{frame}
+
+
+\tikzset{->-/.style={decoration={markings,mark=at position .55 with {\arrow{to}}},postaction={decorate}}} 
+\tikzset{
+    partial ellipse/.style args={#1:#2:#3}{
+        insert path={+ (#1:#3) arc (#1:#2:#3)}
+    }
+}
+
+\section{Background}
+
+\begin{frame}
+    \frametitle{Some Background}
+    \begin{itemize}
+        \item
+            I completed my Bachelor's and Master's in Physics at Pisa University.
+        \item
+            I focused on Quantum Mechanics, Quantum Field Theories and Statistical Physics, in particular on their computational aspects.
+        \item
+            During my Master's, I joined the Guest Student Programme in J\"ulich Supercomputing Centre.
+        \item
+            Apart from Theoretical Physics and HPC, my main other interests are Probability Theory, Statistics and Machine Learning.
+    \end{itemize}
+\end{frame}
+
+\section{Experiences}
+
+\begin{frame}
+    \frametitle{Previous experiences}
+    \begin{itemize}
+        \item
+            For my Bachelor thesis, I implemented a MC simulation of a Bose-Einstein condensate in a harmonic trap with Prof. E. Vicari.
+        \item
+            During my stay in J\"ulich, I implemented the Schwinger model on a Klein bottle, and studied the properties of the topological charge with Prof. K. Szabo.
+        \item
+            For my Master thesis, 
+            I developed and evaluated with Prof. M. D'Elia
+            a new cluster algorithm for the Schwinger model that solves the problem of topological freezing in this system.
+        \item
+            Further studies are being done to extend this algorithm to more advanced models.
+    \end{itemize}
+\end{frame}
+
+\section{Project}
+
+\begin{frame}
+    \frametitle{Quantum simulation with quantum computers}
+    \begin{itemize}
+        \item
+            I am working with Rigetti and IBM Q quantum computers, supervised by Karl Jansen, Caren Tischendorf and Igor Sokolov.
+        \item
+            It is possible to map some lattice gauge theories to qubits systems.
+        \item
+            We will start with 1+1 dimensional models that are of interest in condensed matter and high energy physics:
+            \begin{itemize}
+                \item Heisenberg model.
+                \item Schwinger model.
+                \item $\mathbb CP^{N-1}$ model.
+                \item Gross-Neveu model.
+            \end{itemize}
+        \item
+            Instead of evaluating path integrals with MC simulations,
+            we want to perform direct measures on qubits.
+        \item
+            This can avoid numerical problems related with path integrals evaluation, i.e. sign problem.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The sign problem in computational physics}
+    \begin{itemize}
+        \item
+            The sign problem arises when evaluating highly oscillatory path integrals.
+        \item
+            It's one of the main problems in computational physics.
+            It affects MC simulations of:
+            \begin{itemize}
+                \item Many electrons systems at low temperatures.
+                \item Nuclei and neutron stars.
+                \item Quark matter and vacuum in QCD.
+            \end{itemize}
+        \item
+            Quantum simulators don't suffer from it.
+            They don't need numerical integration of path integrals.
+            Measures are performed directly on quantum states.
+        \item
+            Quantum computers may provide a complementary numerical method in these fields.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quantum advantage}
+    \begin{itemize}
+        \item
+            There is a Quantum advantage if a quantum computer can solve a problem that a classical computer cannot.
+        \item
+            Not achieved yet. IBM Q, Rigetti, Google and NASA are working on it for years.
+        \item
+            We expect that quantum physics problems will have greater advantages from quantum computers:
+            \begin{itemize}
+                \item Quantum systems are easier to map to qubits states. They share QM rules.
+                \item Integrating path integrals is very resource demanding.
+            \end{itemize}
+        \item
+            System with the sign problem could show quantum advantages:
+            \begin{itemize}
+                \item Path integrals evaluation becomes very complicated. In some cases impossible.
+                \item Even an imprecise result with a quantum computer could show a quantum advantage.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\hoffset=-0.5\leftsidebar
+{
+    \usebackgroundtemplate{
+        \put(320,-230){%
+        \tikz\node[opacity=0.2] {\pgfuseimage{humboldt}};
+        }
+    }
+\begin{frame}[plain,t]
+\titlepage
+\end{frame}
+}
+\hoffset=0in % restore left margin
+
+\end{document}
