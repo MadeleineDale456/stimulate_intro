@@ -103,10 +103,29 @@
 \section{Project}
 
 \begin{frame}
+    \frametitle{Our project in STIMULATE}
+    \begin{itemize}
+        \item
+            We want to perform quantum simulations for models in high energy physics which are afflicted with a sign problem.
+        \item
+            It will be done with a hybrid classical-quantum approach using a variational quantum simulation:
+            \begin{itemize}
+                \item
+                    Quantum computing: evaluate the expectation values in a high dimensional parameter space.
+                \item
+                    Classical computing: minimize the energy cost function in this parameter space.
+            \end{itemize}
+        \item
+            My task: develop variational optimization algorithms that are scalable,
+            robust to decoherence and can deal with error afflicted data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
     \frametitle{Quantum simulation with quantum computers}
     \begin{itemize}
         \item
-            We working with Rigetti and IBM Q quantum computers.
+            We are working with Rigetti and IBM Q quantum computers.
         \item
             It is possible to map some physical models to qubits systems.
         \item
@@ -114,33 +133,13 @@
             Heisenberg model, Schwinger model, $\mathbb CP^{N-1}$ model and Gross-Neveu model.
         \item
             Instead of evaluating path integrals with MC simulations,
-            we want to perform direct measures on qubits, avoiding problems such long autocorrelation and the sign problem.
+            we want to perform direct measures on qubits, avoiding problems such long autocorrelation and the sign problem
+            $\Rightarrow$ Quantum advantage?
         \item
             We plan to apply the same idea to 2+1 dimensional gauge theories, abelian and non-abelian, and coupled to matter.
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Quantum advantage}
-    \begin{itemize}
-        \item
-            There is a Quantum advantage if a quantum computer can solve a problem that a classical computer cannot.
-        \item
-            Not achieved yet. IBM Q, Rigetti, Google and NASA are working on it for years.
-        \item
-            We expect that quantum physics problems will have greater advantages from quantum computers:
-            \begin{itemize}
-                \item Quantum systems are easier to map to qubits states. They share QM rules.
-                \item Integrating path integrals is very resource demanding.
-            \end{itemize}
-        \item
-            System with the sign problem could show quantum advantages:
-            \begin{itemize}
-                \item Path integrals evaluation becomes very complicated. In some cases impossible.
-                \item Even an imprecise result with a quantum computer could show a quantum advantage.
-            \end{itemize}
-    \end{itemize}
-\end{frame}
 
 \hoffset=-0.5\leftsidebar
 \begin{frame}[plain,t]
@@ -169,6 +168,28 @@
             Measures are performed directly on quantum states.
         \item
             Quantum computers may provide a complementary numerical method in these fields.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quantum advantage}
+    \begin{itemize}
+        \item
+            There is a Quantum advantage if a quantum computer can solve a problem that a classical computer cannot.
+        \item
+            Not achieved yet. IBM Q, Rigetti, Google and NASA are working on it for years.
+        \item
+            We expect that quantum physics problems will have greater advantages from quantum computers:
+            \begin{itemize}
+                \item Quantum systems are easier to map to qubits states. They share QM rules.
+                \item Integrating path integrals is very resource demanding.
+            \end{itemize}
+        \item
+            System with the sign problem could show quantum advantages:
+            \begin{itemize}
+                \item Path integrals evaluation becomes very complicated. In some cases impossible.
+                \item Even an imprecise result with a quantum computer could show a quantum advantage.
+            \end{itemize}
     \end{itemize}
 \end{frame}
 
